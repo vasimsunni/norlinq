@@ -7,7 +7,7 @@ let id = 0
 const errorMessage = ref('')
 const notes = ref([])
 
-const baseURL = 'https://localhost:44366/api/note' 
+const baseURL = import.meta.env.VITE_API_URL + 'note';
 
 fetchNotes();
 
@@ -35,11 +35,31 @@ function addNewNote(){
 }
 
 function editNote(id){
-    console.log('edit note: '+id);
+    router.push({ 
+        name: 'updatenote', 
+        params: { noteId:id } 
+    });
 }
 
-function deleteNote(id){
-    console.log('delete note: '+id);
+async function deleteNote(id){
+    const deleteAPIURL = baseURL+'/'+id;
+try {
+const requestOptions = {
+      method: 'DELETE'
+    };
+
+    const fetchData = await fetch(deleteAPIURL, requestOptions);
+    const response = await fetchData.json();;
+    console.log(response);
+    if(response.isSuccess){
+        fetchNotes();
+    }
+    else{
+        errorMessage = response.message;
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 </script>
