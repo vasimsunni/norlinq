@@ -1,4 +1,5 @@
 ﻿using NoteApp.Core.Repository;
+using NoteApp.Services.Note;
 
 namespace NoteApp.Infrastructure.Configuration
 {
@@ -7,7 +8,7 @@ namespace NoteApp.Infrastructure.Configuration
         public static IServiceCollection RegisterServices(this IServiceCollection services)
         {
             //Dependency Injection for services
-            
+            services.AddScoped<INoteService, NoteService>();
             return services;
         }
 
@@ -15,7 +16,7 @@ namespace NoteApp.Infrastructure.Configuration
         {
             //Dependency Injection for repo
 
-            //Generic repo registeration to allow all repos for entity. Must be scoped
+            //Generic repo registration to allow all repos for entity. Must be scoped
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             return services;

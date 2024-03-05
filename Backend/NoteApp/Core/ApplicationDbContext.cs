@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using NoteApp.Core.Entity;
 
 namespace Core.Database
 {
@@ -12,7 +13,7 @@ namespace Core.Database
 
 
         #region Entity
-        
+        public DbSet<Note> Notes { get; set; }
         #endregion
 
         protected override void OnModelCreating(ModelBuilder builder)
