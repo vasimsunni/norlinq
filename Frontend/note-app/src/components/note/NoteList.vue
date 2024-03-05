@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import NoteItem from './NoteItem.vue'
 import { onMounted, ref } from 'vue'
+import router from '../../router';
 
 let id = 0
 const errorMessage = ref('')
@@ -30,7 +31,7 @@ async function fetchNotes() {
 }
 
 function addNewNote(){
-    console.log('add new note');
+    router.push({ name: 'addnewnote' });
 }
 
 function editNote(id){
