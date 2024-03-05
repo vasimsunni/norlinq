@@ -16,8 +16,8 @@
   display: flex;
   padding: 10px;
   border: 1px solid #ffffff;
-  background:rgba(255,255,255,0.1);
-  border-radius:5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
 .details {
@@ -29,5 +29,4 @@ h4 {
   margin-bottom: 0.4rem;
   color: var(--color-heading);
 }
-
 </style>

@@ -4,6 +4,6 @@ import UpdateNote from '../../components/note/UpdateNote.vue'
 
 <template>
   <main>
-    <UpdateNote/>
+    <UpdateNote />
   </main>
 </template>

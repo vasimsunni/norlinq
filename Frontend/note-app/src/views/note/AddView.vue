@@ -4,6 +4,6 @@ import AddNote from '../../components/note/AddNote.vue'
 
 <template>
   <main>
-    <AddNote/>
+    <AddNote />
   </main>
 </template>
